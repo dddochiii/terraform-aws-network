@@ -2,7 +2,7 @@
 resource "aws_eip" "eip" {
     count = var.public_yn ? 1 : 0
 
-    vpc              = true
+    domain = "vpc"
     public_ipv4_pool = "amazon"
 
     tags = {
@@ -26,7 +26,7 @@ data "aws_internet_gateway" "igw" {
 resource "aws_nat_gateway" "nat" {
   connectivity_type = var.public_yn ? "public" : "private"
 
-  dynamic "public" {
+  dynamic "allocation_id" {
     count = var.public_yn ? 1 : 0
 
     allocation_id = aws_eip.eip.id  
