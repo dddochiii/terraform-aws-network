@@ -26,7 +26,7 @@ data "aws_internet_gateway" "igw" {
 resource "aws_nat_gateway" "nat" {
   connectivity_type = var.public_yn ? "public" : "private"
 
-  dynamic "public_yn" {
+  dynamic public_yn {
     count = var.public_yn ? 1 : 0
     content {
       allocation_id = aws_eip.eip.id

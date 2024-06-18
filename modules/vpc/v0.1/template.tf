@@ -5,7 +5,7 @@ resource "aws_vpc" "vpc" {
   enable_dns_hostnames = true
 
   tags = {
-    Name      = join("-", [vpc_purpose,"vpc"])
+    Name      = join("-", [var.vpc_purpose,"vpc"])
   }
 }
 
@@ -16,6 +16,6 @@ resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.vpc.id
 
   tags = {
-    Name      = join("-",[join("-", [vpc_purpose,"vpc"]),"igw"])
+    Name      = join("-",[join("-", [var.vpc_purpose,"vpc"]),"igw"])
   }
 }
