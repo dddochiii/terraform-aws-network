@@ -1,7 +1,7 @@
 module "sentinel-test-sg" {
   source = "./modules/sg/v0.1"
 
-  vpc_id     = module.test_vpc.vpc_id
+  vpc_id     = module.vpc.vpc_id
   sg_purpose = "sentinel-test"
 
   # [{Protocol}, {Port}, {CIDR}, {Description}]
