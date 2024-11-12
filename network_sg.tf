@@ -1,17 +1,17 @@
-# module "sg_bastion" {
-#   source = "./modules/sg/v0.1"
+module "sentinel-test-sg" {
+  source = "./modules/sg/v0.1"
 
-#   vpc_id = module.test_vpc.vpc_id
-#   sg_purpose = "bastion"
+  vpc_id     = module.test_vpc.vpc_id
+  sg_purpose = "sentinel-test"
 
-#   # [{Protocol}, {Port}, {CIDR}, {Description}]
-#   ingress_rule = [
-#     ["ssh", 22, module.sg_bastion.security_group_ids, "Access from Bastion to Private Network"],
-#   ]
-#   egress_rule = [
-#     [-1, 0, "0.0.0.0/0", "Bastion Outbound"],
-#   ]
-# }
+  # [{Protocol}, {Port}, {CIDR}, {Description}]
+  ingress_rule = [
+    ["ssh", 22, "0.0.0.0/0", "Access from Bastion to Private Network"],
+  ]
+  egress_rule = [
+    [-1, 0, "0.0.0.0/0", "Bastion Outbound"],
+  ]
+}
 
 # module "sg_mgmt" {
 #   source = "./modules/sg/v0.1"

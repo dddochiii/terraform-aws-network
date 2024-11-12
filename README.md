@@ -16,6 +16,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_sentinel-test-sg"></a> [sentinel-test-sg](#module\_sentinel-test-sg) | ./modules/sg/v0.1 | n/a |
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | ./modules/vpc/v0.1 | n/a |
 
 ## Resources
