@@ -3,7 +3,7 @@
 
 #   vpc_id = module.test_vpc.vpc_id
 #   sg_purpose = "bastion"
-  
+
 #   # [{Protocol}, {Port}, {CIDR}, {Description}]
 #   ingress_rule = [
 #     ["ssh", 22, module.sg_bastion.security_group_ids, "Access from Bastion to Private Network"],
@@ -18,7 +18,7 @@
 
 #   vpc_id = module.test_vpc.vpc_id
 #   sg_purpose = "mgmt"
-  
+
 #   # [{Protocol}, {Port}, {CIDR}, {Description}]
 #   ingress_rule = [
 #     ["ssh", 22, module.sg_bastion.security_group_ids, "Access from Bastion to Private Network"],
@@ -26,7 +26,7 @@
 #   egress_rule = [
 #     [-1, 0, "0.0.0.0/0", "Bastion Outbound"],
 #   ]
-  
+
 # }
 
 # module "sg_vpce" {
@@ -34,7 +34,7 @@
 
 #   vpc_id = module.test_vpc.vpc_id
 #   sg_purpose = "vpce"
-  
+
 #   # [{Protocol}, {Port}, {CIDR}, {Description}]
 #   ingress_rule = [
 #     ["tcp", 443, module.test_vpc.cidr_block, "Access to VPC Endpoint"],
@@ -49,7 +49,7 @@
 
 #   vpc_id = module.test_vpc.vpc_id
 #   sg_purpose = "app"
-  
+
 #   # [{Protocol}, {Port}, {CIDR}, {Description}]
 #   ingress_rule = [
 #     ["tcp", 80, module.test_vpc.cidr_block, "Access to Service"],
@@ -62,10 +62,10 @@
 
 # module "sg_lb" {
 #   source = "./modules/sg/v0.1"
-  
+
 #   vpc_id = module.test_vpc.vpc_id
 #   sg_purpose = "lb"
-  
+
 #   # [{Protocol}, {Port}, {CIDR}, {Description}]
 #   ingress_rule = [
 #     ["tcp", 80, module.test_vpc.cidr_block, "Access to Service"],

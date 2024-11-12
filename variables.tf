@@ -1,3 +1,5 @@
 variable "region" {
-  type = string
+  type        = string
+  description = "AWS Region to use"
+  default     = "ap-northeast-2" # Seoul Region
 }

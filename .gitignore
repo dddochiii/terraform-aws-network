@@ -1,0 +1,6 @@
+#When You run Local Plan, Created Terraform Files
+.terraform/
+.terraform.*
+
+#Terraform Code to Override for Local Test
+override.tf

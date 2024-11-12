@@ -2,9 +2,9 @@
 module "vpc" {
   source = "./modules/vpc/v0.1"
 
-  vpc_cidr = "192.168.0.0/16"
+  vpc_cidr    = "192.168.0.0/16"
   vpc_purpose = "test"
-  attach_igw = true
+  attach_igw  = true
 }
 
 # ## NAT Gateway & EIP ##
